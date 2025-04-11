@@ -1,0 +1,12 @@
+<h2>Your Cart</h2>
+{% if books %}
+  <ul>
+    {% for book in books %}
+      <li>{{ book.title }} – ₹{{ book.price }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Your cart is empty.</p>
+{% endif %}
+<a href="{% url 'booklist' %}">← Back to Book List</a> |
+<a href="{% url 'logout' %}">Logout</a>
